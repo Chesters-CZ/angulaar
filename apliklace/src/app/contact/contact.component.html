@@ -1,0 +1,7 @@
+<p>contact works!</p>
+<form (ngSubmit)="vypisvjec()">
+  <input #txt  type="text" (keyup)="hodnotaText = txt.value"> <br>
+  <input #num type="number" (keyup)="hodnotaNumber = num.value"> <br>
+  <input #pss type="password" (keyup)="hodnotaPass= pss.value" > <br>
+  <button type="submit">Submit</button>
+</form>
