@@ -1,7 +1,14 @@
 <div style="display: flex; flex-direction: row">
-  <a style="padding: 5px" routerLink="home">Home</a>
-  <a style="padding: 5px" routerLink="stranadvje">Contact</a>
-  <a style="padding: 5px" routerLink="aboutus">About us</a>
+  <input type="text" [(ngModel)]="kvery">
+  <a *ngIf="kvery===''">
+  <a style="padding: 5px;" routerLink="home">Home</a>
+  <a style="padding: 5px;" routerLink="stranadvje">Contact</a>
+  <a style="padding: 5px;" routerLink="aboutus">About us</a>
+  </a>
+
+  <a style="padding: 5px;" *ngIf="kvery.includes('home')" routerLink="home">Home</a>
+  <a style="padding: 5px;" *ngIf="kvery.includes('contact')" routerLink="stranadvje">Contact</a>
+  <a style="padding: 5px;" *ngIf="kvery.includes('about us')" routerLink="aboutus">About us</a>
 </div>
 
 
