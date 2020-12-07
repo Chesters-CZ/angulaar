@@ -1,0 +1,8 @@
+<p></p>
+<form (ngSubmit)="postBlog(headerinput, bodyinput)">
+  <input #hed (keyup)="headerinput = hed.value" ngModel="headerinput" placeholder="Blog Tittle"> <br>
+  <input #bod (keyup)="bodyinput = bod.value" ngModel="bodyinput" placeholder="Blog Body"> <br>
+  <button type="submit">Post</button> <br>
+</form>
+
+<div id="BlogPostY"></div>
