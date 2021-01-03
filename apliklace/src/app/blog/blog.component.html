@@ -1,7 +1,10 @@
 <p></p>
-<form (ngSubmit)="postBlog(headerinput, bodyinput)">
-  <input #hed (keyup)="headerinput = hed.value" ngModel="headerinput" placeholder="Blog Tittle"> <br>
-  <input #bod (keyup)="bodyinput = bod.value" ngModel="bodyinput" placeholder="Blog Body"> <br>
+<form #blogform (ngSubmit)="postBlog(hed.value, bod.value, whichone.value - 1); this.blogform.reset()">
+  <input #hed  placeholder="Blog Tittle"> <br>
+  <input #bod placeholder="Blog Body"> <br>
+  <br>
+  <div> Do you want to edit?</div>
+  <input #whichone type="number"><br><p></p>
   <button type="submit">Post</button> <br>
 </form>
 

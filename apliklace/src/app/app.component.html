@@ -1,5 +1,5 @@
 <div style="display: flex; flex-direction: row">
-  <input type="text" [(ngModel)]="kvery">
+  <input type="text" [(ngModel)]="kvery" placeholder="serch">
 
   <a style="padding: 5px;" *ngIf="kvery.includes('home')||kvery===''" routerLink="home">Home</a>
   <a style="padding: 5px;" *ngIf="kvery.includes('contact')||kvery===''" routerLink="stranadvje">Contact</a>
