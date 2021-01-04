@@ -1,0 +1,8 @@
+<p></p>
+<form #excform (ngSubmit)="zkratit(tecksct.value, nakolik.value); this.excform.reset()">
+  <input #tecksct placeholder="text"> <br>
+  <input #nakolik placeholder="na kolik"> <br>
+  <br>
+  <button type="submit">Go!</button>
+</form>
+<div id="otput"></div>

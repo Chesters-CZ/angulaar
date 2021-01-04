@@ -11,6 +11,7 @@ import {HomeComponent} from './home/home.component';
 import {AboutcompComponent} from './aboutcomp/aboutcomp.component';
 import {HomecompComponent} from './homecomp/homecomp.component';
 import {BlogComponent} from './blog/blog.component';
+import { ExcreptComponent } from './excrept/excrept.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {BlogComponent} from './blog/blog.component';
     HomeComponent,
     AboutcompComponent,
     HomecompComponent,
-    BlogComponent
+    BlogComponent,
+    ExcreptComponent
   ],
   imports: [
     BrowserModule,
