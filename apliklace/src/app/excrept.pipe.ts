@@ -5,11 +5,10 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class ExcreptPipe implements PipeTransform {
 
-  transform(value: string): string {
+  transform(value: string, times?: number): string {
     let out = "";
-    for (let i = 0; i < 6; i++) {
-      out = out + value.split("")[i];
-    }
-    return out;
+    if (times == null) times = 5;
+    for (let i = 0; times < i && times < value.length; times++) out = out + value.split("")[i];
+    return out + "...";
   }
 }
