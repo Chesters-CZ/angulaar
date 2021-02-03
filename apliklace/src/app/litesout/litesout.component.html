@@ -1,0 +1,25 @@
+<div class="centerbutinlinent">
+  <div class="flexcolumn">
+    <h2 class="nopadbot alignselfcenter">gl hf</h2>
+    <h6 class="nopadtop alignselfcenter">solvability not guaranteed</h6>
+  </div>
+</div>
+<div *ngFor="let slides of mcdonaldsplayspace; let x = index" class="generalflex flexrow">
+  <div *ngFor="let atoms of slides; let y = index" class="generalflex flexcolumn">
+    <div (click)="getclickedon(x, y)" *ngIf="atoms" class="onbunka generalbunka"></div>
+    <div (click)="getclickedon(x, y)" *ngIf="!atoms" class="offbunka generalbunka"></div>
+  </div>
+</div>
+<div *ngIf="endscreenshown" class="centerbutinlinent">
+  <div class="flexcolumn">
+    <h4 class="alignselfcenter nopadbot">​ gg.</h4>
+    <p class="alignselfcenter nopadtop">nice. took {{clicks}} clicks</p>
+    <p class="alignselfcenter">
+      <button (click)="regenerate()" class="automar">torture me more</button>
+    </p>
+  </div>
+</div>
+<p class="centerbutinlinent">
+  <button (click)="regenerate()" class="automar alignselfcenter">F5</button>
+</p>
+
