@@ -19,7 +19,13 @@
     </p>
   </div>
 </div>
-<p class="centerbutinlinent">
+<div *ngIf="!endscreenshown" class="centerbutinlinent">
+  <div class="flexcolumn">
+    <p class="alignselfcenter nopadtop">taking you {{clicks}} clicks</p>
+    <p class="alignselfcenter nopadtop">your hiscore is {{hiscore}}</p>
+  </div>
+</div>
+<p *ngIf="!endscreenshown" class="centerbutinlinent">
   <button (click)="regenerate()" class="automar alignselfcenter">F5</button>
 </p>
 

@@ -15,16 +15,23 @@ export class LitesoutComponent implements OnInit {
   public mcdonaldsplayspace: boolean[][];
   public size: number;
   public clicks: number;
+  public hiscore: number;
 
   ngOnInit(): void {
   }
 
   regenerate() {
+    let cookies = document.cookie;
+    if (cookies.includes("lightsouthighscore = ")) {
+      let extractedcookie = cookies.split("lightsouthighscore = ");
+      this.hiscore = parseInt(extractedcookie[0]);
+    }
+    else this.hiscore = 0;
     this.clicks = 0;
     this.endscreenshown = false;
     console.debug(this.size);
     this.size = parseInt(window.prompt("how many difficults do you want?", "10"));
-    while (isNaN(this.size)){
+    while (isNaN(this.size)) {
       this.size = parseInt(window.prompt("HEY! I ASKED YOU A QUESTION!", "10"));
     }
     console.debug(this.size);
@@ -85,7 +92,13 @@ export class LitesoutComponent implements OnInit {
       }
     }
     console.debug("verified value = " + confirmedfail);
-    if (!confirmedfail) this.endscreenshown = true;
+    if (!confirmedfail) {
+      this.endscreenshown = true;
+      if (this.hiscore < this.clicks) {
+        this.hiscore = this.clicks;
+        document.cookie = "lightsouthighscore = " + this.hiscore;
+      }
+    }
     console.debug("verified value = " + confirmedfail);
     console.debug("endshown " + this.endscreenshown);
   }
