@@ -13,6 +13,7 @@ import {HomecompComponent} from './homecomp/homecomp.component';
 import {BlogComponent} from './blog/blog.component';
 import { ExcreptPipe } from './excrept.pipe';
 import { LitesoutComponent } from './litesout/litesout.component';
+import { CheckedformsComponent } from './checkedforms/checkedforms.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LitesoutComponent } from './litesout/litesout.component';
     HomecompComponent,
     BlogComponent,
     ExcreptPipe,
-    LitesoutComponent
+    LitesoutComponent,
+    CheckedformsComponent
   ],
   imports: [
     BrowserModule,

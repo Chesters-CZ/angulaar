@@ -1,0 +1,36 @@
+<h1>this broken</h1>
+<div>
+  uinel
+  <br> uinel.errors
+  <div *ngIf="UinEl.errors!=null">--{{UinEl.errors.toString()}}--</div>
+  <br> uinel.errors.req
+<!--  <div>{{UinEl.errors.required.toString()}}</div>
+  <br> uinel.errors.min
+  <div>{{UinEl.errors.minlength.toString()}}</div> -->
+  <br> uinel.touched
+  <div>{{UinEl.touched.toString()}}</div>
+</div>
+
+<h3>Register for free identity theft</h3>
+<ng-form #form="ngForm" (ngSubmit)="addUnameToUnames()">
+  <label for="uname" style="background-color: deeppink" *ngIf="UinEl.errors && UinEl.touched"> Ňeco sem
+    dej.</label>
+  <label for="uname" style="background-color: deeppink" *ngIf="UinEl.errors.minlength && UinEl.touched"> you need to be
+    at
+      least {{UinEl.errors.minlength.valueOf()}} chars tall
+  </label>
+  <label for="uname" *ngIf="UinEl.errors.maxlength?.length > 0 && UinEl.touched" style="background-color: deeppink"> you
+    need to be at
+    most {{UinEl.errors.requiredLength}} chars tall
+  </label>
+
+  <input type="text" [(ngModel)]="username" placeholder="username" required minlength="3" maxlength="32"
+         id="uname" name="uname" #UinEl="ngModel"> <!-- User Input Element -->
+
+  <button type="submit" *ngIf="UinEl.valid">YEET!</button>
+</ng-form>
+
+<h3>Registered bois</h3>
+<div *ngFor="let u of usernames">
+  <div>{{u}}</div>
+</div>
