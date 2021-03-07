@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ContactComponent} from './contact/contact.component';
@@ -14,6 +15,8 @@ import {BlogComponent} from './blog/blog.component';
 import { ExcreptPipe } from './excrept.pipe';
 import { LitesoutComponent } from './litesout/litesout.component';
 import { CheckedformsComponent } from './checkedforms/checkedforms.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { CheckedformsComponent } from './checkedforms/checkedforms.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
