@@ -27,7 +27,7 @@
   <input type="text" [(ngModel)]="username" placeholder="username" required minlength="3" maxlength="32"
          id="uname" name="uname" #UinEl="ngModel"> <!-- User Input Element -->
 
-  <button type="submit" *ngIf="UinEl.valid">YEET!</button>
+  <button type="submit" *ngIf="form.valid">YEET!</button>
 </ng-form>
 
 <h3>Registered bois</h3>
