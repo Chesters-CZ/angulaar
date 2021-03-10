@@ -32,13 +32,14 @@ export class CheckedformsComponent implements OnInit {
     this.usernames[this.usernames.length] = this.username;
     this.http.put("https://webhook.site/026c64bb-f24b-4986-aee9-ac8d211d2156", this.username);
 
-    if (this.telphon.length < 9){ //pro čísla co začínaj nulou / nulama
-      while (this.telphon.length != 9){
-        this.telphon = "0" + this.telphon;
+    let sampltext: String = this.telphon;
+    if (sampltext.length < 9){ //pro čísla co začínaj nulou / nulama
+      while (sampltext.length != 9){
+        sampltext = "0" + sampltext;
       }
     }
 
-    this.telphons[this.telphons.length] = this.telphon.charAt(0) + this.telphon.charAt(1) + this.telphon.charAt(2) + " " + this.telphon.charAt(3) + this.telphon.charAt(4) + this.telphon.charAt(5) + " " + this.telphon.charAt(6) + this.telphon.charAt(7) + this.telphon.charAt(8);
+    this.telphons[this.telphons.length] = sampltext; //.charAt(0).toString() + sampltext.charAt(1).toString() + sampltext.charAt(2).toString() + " " + sampltext.charAt(3).toString() + sampltext.charAt(4).toString() + sampltext.charAt(5).toString() + " " + sampltext.charAt(6).toString() + sampltext.charAt(7).toString() + sampltext.charAt(8).toString();
   }
 
   constructor(private http: HttpClient){}
