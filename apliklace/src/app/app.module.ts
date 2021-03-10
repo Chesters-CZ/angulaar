@@ -16,6 +16,8 @@ import { ExcreptPipe } from './excrept.pipe';
 import { LitesoutComponent } from './litesout/litesout.component';
 import { CheckedformsComponent } from './checkedforms/checkedforms.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MinDirective } from './min.directive';
+import { MaxDirective } from './max.directive';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     BlogComponent,
     ExcreptPipe,
     LitesoutComponent,
-    CheckedformsComponent
+    CheckedformsComponent,
+    MinDirective,
+    MaxDirective
   ],
   imports: [
     BrowserModule,

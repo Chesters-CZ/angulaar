@@ -22,11 +22,23 @@ export class CheckedformsComponent implements OnInit {
   username: String;
   usernames: String[] = [];
 
+  // me hasn't the brains. místo věku zadává telefon, ale to nevadí. budeme dělat že je to věk.
+  telphon: String;
+  telphons: String[] = [];
+
   addUnameToUnames() {
     console.debug("addunametounames started");
     console.debug(this.username);
-    this.usernames[this.usernames.length+1] = this.username;
-    this.http.put("https://webhook.site/c69b9ba0-5ca3-44c9-9ba1-737071941d61", this.username);
+    this.usernames[this.usernames.length] = this.username;
+    this.http.put("https://webhook.site/026c64bb-f24b-4986-aee9-ac8d211d2156", this.username);
+
+    if (this.telphon.length < 9){ //pro čísla co začínaj nulou / nulama
+      while (this.telphon.length != 9){
+        this.telphon = "0" + this.telphon;
+      }
+    }
+
+    this.telphons[this.telphons.length] = this.telphon.charAt(0) + this.telphon.charAt(1) + this.telphon.charAt(2) + " " + this.telphon.charAt(3) + this.telphon.charAt(4) + this.telphon.charAt(5) + " " + this.telphon.charAt(6) + this.telphon.charAt(7) + this.telphon.charAt(8);
   }
 
   constructor(private http: HttpClient){}
